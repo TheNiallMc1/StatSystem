@@ -1,0 +1,21 @@
+{
+  "name": "com.unlimitedbombs.stat-system",
+  "version": "1.0.0",
+  "displayName": "Stat System",
+  "description": "Flexible stat tracking and modifying system for players",
+  "unity": "2020.1",
+  "unityRelease": "0b5",
+  "dependencies": 
+  {
+  },
+  "keywords": [
+    "stat",
+    "stats",
+    "rpg"
+  ],
+  "author": {
+    "name": "Niall McCoy",
+    "email": "niallmccoy123@outlook.com",
+    "url": ""
+  }
+}
