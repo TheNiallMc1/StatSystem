@@ -5,7 +5,7 @@ using System.Collections.ObjectModel;
 namespace UnlimitedBombs.StatSystem
 {
     [Serializable]
-    public class CharacterStat
+    public class Stat
     {
         public float baseValue;
 
@@ -31,7 +31,7 @@ namespace UnlimitedBombs.StatSystem
         private readonly List<StatModifier> _statModifiers;
         public readonly ReadOnlyCollection<StatModifier> statModifiers;
 
-        public CharacterStat(float _baseValue)
+        public Stat(float _baseValue)
         {
             baseValue = _baseValue;
             _statModifiers = new List<StatModifier>();
