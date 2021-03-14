@@ -7,7 +7,8 @@ namespace UnlimitedBombs.StatSystem
     [Serializable]
     public class Stat
     {
-        public float baseValue;
+        public string statName;
+        public int baseValue;
 
         public float value
         {
@@ -31,9 +32,10 @@ namespace UnlimitedBombs.StatSystem
         private readonly List<StatModifier> _statModifiers;
         public readonly ReadOnlyCollection<StatModifier> statModifiers;
 
-        public Stat(float _baseValue)
+        public Stat(string _statName, int _baseValue)
         {
             baseValue = _baseValue;
+            statName = _statName;
             _statModifiers = new List<StatModifier>();
             statModifiers = _statModifiers.AsReadOnly();
         }
@@ -65,6 +67,7 @@ namespace UnlimitedBombs.StatSystem
             return didRemove;
         }
         
+        // Higher orders are applied first
         private int CompareModifierOrder(StatModifier a, StatModifier b)
         {
             if (a.order < b.order)
@@ -84,7 +87,6 @@ namespace UnlimitedBombs.StatSystem
         private float CalculateFinalValue()
         {
             float finalValue = baseValue;
-            float sumPercentAdd = 0;
 
             foreach (StatModifier mod in _statModifiers)
             {
